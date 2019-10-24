@@ -1,8 +1,8 @@
 <div style="text-align:center;">
-  <a href="https://github.com/react-tools/react-table" target="\_parent"><img src="https://github.com/react-tools/media/raw/master/logo-react-table.png" alt="React Table Logo" style="width:450px;"/></a>
+  <a href="https://github.com/tannerlinsley/react-table" target="\_parent"><img src="https://github.com/react-tools/media/raw/master/logo-react-table.png" alt="React Table Logo" style="width:450px;"/></a>
 </div>
 
-# React Table
+# React Table v6
 
 `react-table` is a **lightweight, fast and extendable datagrid** built for React
 
@@ -27,6 +27,10 @@
 
 <br />
 <br />
+
+## v6
+
+This is a v6 of react-table, due to the incredibly massive differences from v7 this branch exists as a way to access its docs and source. I do not intend on offering any long-term support for it. If you intend to keep using v6, I recommend maintaining your own fork of the library and keeping it up to date for your version of React. Otherwise, look into using [the most recent version](https://github.com/tannerlinsley/react-table) of react-table!
 
 ## Features
 
@@ -66,6 +70,7 @@
 
 ## Versions
 
+- [The most recent version](https://github.com/tannerlinsley/react-table)
 - This documentation is for version 6 of react-table.
 - [View the Changelog](https://github.com/react-tools/react-table/blob/master/CHANGELOG.md)
 - Previous versions:
@@ -101,13 +106,13 @@
         </a>
       </td>
       <td align="center" valign="middle">
-        <a href="https://tryretool.com/?utm_source=sponsor&utm_campaign=react_table" target="_blank">
-          <img src="https://raw.githubusercontent.com/tannerlinsley/files/master/images/patreon/gold-placeholder.png">
+        <a href="https://nozzle.io" target="_blank">
+          <img width="300" src="https://nozzle.io/img/logo-blue.png">
         </a>
       </td>
       <td align="center" valign="middle">
-        <a href="https://tryretool.com/?utm_source=sponsor&utm_campaign=react_table" target="_blank">
-          <img src="https://raw.githubusercontent.com/tannerlinsley/files/master/images/patreon/gold-placeholder.png">
+        <a href="https://zappi.io/web" target="_blank">
+          <img width="300" src="https://raw.githubusercontent.com/tannerlinsley/files/master/images/patreon/sponsor-zappi.png">
         </a>
       </td>
     </tr>
@@ -169,34 +174,36 @@
 
 ## Installation
 
+Note that this installation guide uses the `react-table-v6` version of the package; while you could access the earier versions of the package by `react-table` name, in order to provide a better migration workflow from v6 to the most recent version of the 6.x.x exists as `react-table-v6`.
+
 1.  Install React Table as a dependency
 
 ```bash
 # Yarn
-$ yarn add react-table
+$ yarn add react-table-v6
 
 # NPM
-$ npm install react-table
+$ npm install react-table-v6
 ```
 
 ## Usage
 
-2.  Import the `react-table` module
+2.  Import the `react-table-v6` module
 
 ```javascript
 // ES6
-import ReactTable from 'react-table'
+import ReactTable from 'react-table-v6'
 // ES5
-var ReactTable = require('react-table').default
+var ReactTable = require('react-table-v6').default
 ```
 
 3.  Import styles by including `react-table.css`
 
 ```javascript
 // JS (Webpack)
-import 'react-table/react-table.css'
+import 'react-table-v6/react-table.css'
 // Old-school
-<link rel="stylesheet" href="node_modules/react-table/react-table.css">
+<link rel="stylesheet" href="node_modules/react-table-v6/react-table.css">
 ```
 
 See the example below for further usage.
@@ -207,12 +214,12 @@ See the example below for further usage.
 <!-- CSS -->
 <link
   rel="stylesheet"
-  href="https://unpkg.com/react-table@latest/react-table.css"
+  href="https://unpkg.com/react-table-v6@latest/react-table.css"
 />
 
 <!-- JS -->
-<script src="https://unpkg.com/react-table@latest/react-table.js"></script>
-<script src="https://unpkg.com/react-table@latest/react-table.min.js"></script>
+<script src="https://unpkg.com/react-table-v6@latest/react-table.js"></script>
+<script src="https://unpkg.com/react-table-v6@latest/react-table.min.js"></script>
 
 <script>
   var ReactTable = window.ReactTable.default
@@ -222,8 +229,8 @@ See the example below for further usage.
 ## Example
 
 ```javascript
-import ReactTable from 'react-table'
-import 'react-table/react-table.css'
+import ReactTable from 'react-table-v6'
+import 'react-table-v6/react-table.css'
 
 render() {
   const data = [{
@@ -270,7 +277,7 @@ Simply pass the `data` prop anything that resembles an array or object. Client-s
 />
 ```
 
-**Pro Tip: Using the `resolveData` prop** - Any time the `data` prop value changes (using a `===` comparison), the table will update, but sometimes you need to materialize, alter, or shape this data before it enters the table. To do this, you can use the `resolveData` prop! It recieves the `data` prop as the only parameter and returns the resolved data.
+**Pro Tip: Using the `resolveData` prop** - Any time the `data` prop value changes (using a `===` comparison), the table will update, but sometimes you need to materialize, alter, or shape this data before it enters the table. To do this, you can use the `resolveData` prop! It receives the `data` prop as the only parameter and returns the resolved data.
 
 ```javascript
 <ReactTable
@@ -386,11 +393,10 @@ These are all of the available props (and their default values) for the main `<R
   getTbodyProps: () => ({}),
   getTrGroupProps: () => ({}),
   getTrProps: () => ({}),
-  getThProps: () => ({}),
   getTdProps: () => ({}),
   getTfootProps: () => ({}),
   getTfootTrProps: () => ({}),
-  getTfootThProps: () => ({}),
+  getTfootTdProps: () => ({}),
   getPaginationProps: () => ({}),
   getLoadingProps: () => ({}),
   getNoDataProps: () => ({}),
@@ -409,7 +415,7 @@ These are all of the available props (and their default values) for the main `<R
     }) => component
 
   // Global Column Defaults
-  // To override only some values, import { ReactTableDefaults } from 'react-table'
+  // To override only some values, import { ReactTableDefaults } from 'react-table-v6'
   // and construct your overrides (e.g. {...ReactTableDefaults.column, className: 'react-table-cell'})
   column: {
     // Renderers
@@ -446,7 +452,7 @@ These are all of the available props (and their default values) for the main `<R
   },
 
   // Global Expander Column Defaults
-  // To override only some values, import { ReactTableDefaults } from 'react-table'
+  // To override only some values, import { ReactTableDefaults } from 'react-table-v6
   // and construct your overrides (e.g. {...ReactTableDefaults.expanderDefaults, sortable: true})
   expanderDefaults: {
     sortable: false,
@@ -476,7 +482,7 @@ These are all of the available props (and their default values) for the main `<R
 You can easily override the core defaults like so:
 
 ```javascript
-import { ReactTableDefaults } from 'react-table'
+import { ReactTableDefaults } from 'react-table-v6'
 
 Object.assign(ReactTableDefaults, {
   defaultPageSize: 10,
@@ -714,7 +720,7 @@ const columns = [
 ## Styles
 
 - React-table ships with a minimal and clean stylesheet to get you on your feet quickly.
-- The stylesheet is located at `react-table/react-table.css`.
+- The stylesheet is located at `react-table-v6/react-table.css`.
 - There are countless ways to import a stylesheet. If you have questions on how to do so, consult the documentation of your build system.
 
 #### Classes
@@ -752,7 +758,6 @@ Every single built-in component's props can be dynamically extended using any on
   getTbodyProps={fn}
   getTrGroupProps={fn}
   getTrProps={fn}
-  getThProps={fn}
   getTdProps={fn}
   getPaginationProps={fn}
   getLoadingProps={fn}
@@ -1104,7 +1109,7 @@ Though we confidently stand by the markup and architecture behind it, `react-tab
 
 ```javascript
 // Change the global default
-import { ReactTableDefaults } from 'react-table'
+import { ReactTableDefaults } from 'react-table-v6'
 Object.assign(ReactTableDefaults, {
   TableComponent: component,
   TheadComponent: component,
@@ -1135,7 +1140,7 @@ Object.assign(ReactTableDefaults, {
   />
 ```
 
-If you choose to change the core components React-Table uses to render, you must make sure your replacement components consume and utilize all of the supplied and inherited props that are needed for that component to function properly. We would suggest investigating <a href="https://github.com/react-tools/react-table/blob/master/src/index.js" target="\_parent">the source</a> for the component you wish to replace.
+If you choose to change the core components React-Table uses to render, you must make sure your replacement components consume and utilize all of the supplied and inherited props that are needed for that component to function properly. We would suggest investigating <a href="https://github.com/tannerlinsley/react-table/blob/v6/src/index.js" target="\_parent">the source</a> for the component you wish to replace.
 
 # HOC Extensions
 
@@ -1159,7 +1164,7 @@ Fortunately, ReactTable exposes a LOT of functionality as props to the component
 props to keep track of and that is where HOCs come in.
 
 You can write a HOC that just focusses on the additional functionality you want to enhance and keep those enhancements to
-reuse over and over again when you need them. You don't have to edit the ReactSource code, just wrap ReactTable in one or
+reuse over and over again when you need them. You don't have to edit the ReactTable source code, just wrap ReactTable in one or
 more HOCs (more on some issues related to chaining HOCs later) that provide the additional functionality you want to expose.
 
 The most obvious HOC is one that can add `checkbox` or select functionality. The HOC included provides `select` functionality
@@ -1174,8 +1179,8 @@ But there is more documentation on the `select` HOC below.
 Any of the below HOCs can be imported from react-table like so:
 
 ```javascript
-import ReactTable from "react-table";
-import treeTableHOC from "react-table/lib/hoc/treeTable";
+import ReactTable from "react-table-v6";
+import treeTableHOC from "react-table-v6/lib/hoc/treeTable";
 
 const TreeTable = treeTableHOC(ReactTable);
 ```
