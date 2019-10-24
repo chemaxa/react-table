@@ -1,74 +1,96 @@
-# React Table
+![React Table Header](https://github.com/tannerlinsley/react-table/raw/master/media/header.png)
+
+<img src='https://github.com/tannerlinsley/react-table/raw/master/media/logo.png' width='300'/>
 
 Hooks for building **lightweight, fast and extendable datagrids** for React
 
-<a href="https://travis-ci.org/tannerlinsley/react-table" target="\_parent">
-  <img alt="" src="https://travis-ci.org/tannerlinsley/react-table.svg?branch=master" />
-</a>
-<a href="https://npmjs.com/package/react-table" target="\_parent">
-  <img alt="" src="https://img.shields.io/npm/dm/react-table.svg" />
-</a>
-<a href="https://spectrum.chat/react-table">
-  <img alt="Join the community on Spectrum" src="https://withspectrum.github.io/badge/badge.svg" />
-</a>
-<a href="https://github.com/tannerlinsley/react-table" target="\_parent">
-  <img alt="" src="https://img.shields.io/github/stars/tannerlinsley/react-table.svg?style=social&label=Star" />
-</a>
-<a href="https://twitter.com/tannerlinsley" target="\_parent">
-  <img alt="" src="https://img.shields.io/twitter/follow/tannerlinsley.svg?style=social&label=Follow" />
+[![GitHub Actions CI](https://github.com/tannerlinsley/react-table/workflows/CI/badge.svg)](https://github.com/tannerlinsley/react-table/actions)
+[![Bundlephobia](https://badgen.net/bundlephobia/minzip/react-table@next)](https://bundlephobia.com/result?p=react-table@next)
+[![NPM Package](https://img.shields.io/npm/dm/react-table.svg)](https://npmjs.com/package/react-table)
+[![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/react-table)
+[![GitHub Stars](https://img.shields.io/github/stars/tannerlinsley/react-table.svg?style=social&label=Star)](https://github.com/tannerlinsley/react-table)
+[![Twitter Followers](https://img.shields.io/twitter/follow/tannerlinsley.svg?style=social&label=Follow)](https://twitter.com/tannerlinsley)
+
+<br />
+<br />
+<a href="https://patreon.com/tannerlinsley">
+  <img width="180" alt="" src="https://raw.githubusercontent.com/tannerlinsley/files/master/images/patreon/become-a-patron.png" />
 </a>
 
 <br />
 <br />
-
-## ⚠️ Version 7
-
-This documentation is for Version 7, which is under active development and currently in an alpha state.
-
-## Version 6
-
-Looking for v6 information?
-
-- [Documentation](https://github.com/tannerlinsley/react-table/tree/v6)
-- [HOC Documentation](https://github.com/tannerlinsley/react-table/tree/v6#hoc-extensions)
-- [Examples](https://github.com/tannerlinsley/react-table/tree/v6#codesandbox-examples)
-- [HOC Examples](https://github.com/tannerlinsley/react-table/tree/v6/docs/src/examples)
 
 ## Features
 
-- Lightweight
-- Headless (Fully customizable)
-- Client-side & Server-side pagination
-- Multi-sort
+- Lightweight (4kb - 9kb depending on features and tree-shaking)
+- Headless (100% customizable, Bring-your-own-UI)
+- Auto out of the box, fully controllable API
+- Sorting (Multi and Stable)
 - Filters
 - Pivoting & Aggregation
-- Fully controllable
-- Extensible
+- Row Selection
+- Row Expansion
+- Column Ordering
+- Animatable
+- Virtualizable
+- Resizable
+- Server-side/controlled data/state
+- Extensible via hook-based plugin system
 - <a href="https://medium.com/@tannerlinsley/why-i-wrote-react-table-and-the-problems-it-has-solved-for-nozzle-others-445c4e93d4a8#.axza4ixba" target="\_parent">"Why I wrote React Table and the problems it has solved for Nozzle.io"</a> by Tanner Linsley
 
-## Versions
+## News / Q&A
 
-- This documentation is for version 7 of react-table.
-- [View the Changelog](https://github.com/tannerlinsley/react-table/blob/master/CHANGELOG.md)
-- Previous versions:
-  - [6.x.x Readme](https://github.com/tannerlinsley/react-table/tree/v6/)
-  - [5.x.x Readme](https://github.com/tannerlinsley/react-table/blob/ad7d31cd3978eb45da7c6194dbab93c1e9a8594d/README.md)
+#### What is the current state of React Table?
+
+React Table v7 is still under active development, and its API is still changing, albeit only slightly. For this reason, it is currently in an **beta** release state. It's estimated that it will be fully released as a stable version sometime during October 2019.
+
+#### Should I use v7@beta in production?
+
+You can use it in production as long as you lock in the beta version in your package.json and also accept that there may be unlikely, but possible bug fixes and/or API changes before it's official release.
+
+#### I'm still using v6, what should I do?
+
+v6 is a great library and is still the default install for `react-table`, however, I do not intend on offering any long-term support for it. If you intend to keep using v6, I recommend maintaining your own fork of the library and keeping it up to date for your version of React.
+
+#### Where are the docs for the older v6 version?
+
+Please [visit the v6 branch](https://github.com/tannerlinsley/react-table/tree/v6)
+
+#### I want to migrate from v6 to v7. How do I do that?
+
+The differences between the 2 versions are incredibly massive. Unfortunately, I cannot write a one-to-one upgrade guide for any of v6's API, simply because much of it is irrelevant with v7's headless approach. The best approach for migrating to v7 is to learn its API by reading the documentation and then following some of the examples to begin building your own table component.
+
+In case you would need to have both v6 and v7 in one app during the migration process (large codebase, complex use cases), you can install an official [`react-table-v6` package](https://www.npmjs.com/package/react-table-v6) alongside the `react-table`.
+
+## Documentation
+
+- [Installation](./docs/installation.md) - Walk through how to install React Table
+- [Concepts](./docs/concepts.md) - Read how React Table works and how you can use it better
+- [Examples](./docs/examples.md) - Experience and learn from some examples and guides of how to use React Table and implement common patterns
+- [API](./docs/api.md) - Get to know React Table's API, how to use it and how to extend its functionality
+- [Contributing](./CONTRIBUTING.md) - Become familiar with how to contribute back to React Table
+- [Code of Conduct](./CODE_OF_CONDUCT.md) - Be a good React Table citizen by following these repository rules
 
 ## Sponsors
 
-**React Table v7** is mostly planned and I (@tannerlinsley) am looking for Patreon support to make it a reality. It will require a decent time commitment on my part to not only implement it, but also help people migrate and continue to maintain it. If you would like to contribute to my Patreon goal for v7 and beyond, [visit my Patreon and help me out!](https://patreon.com/tannerlinsley).
+**React Table v7** is being built and maintained by me, @tannerlinsley and I am always in need of more Patreon support to keep this project afloat. If you would like to contribute to my Patreon goal for v7 and beyond, [visit my Patreon and help me out!](https://patreon.com/tannerlinsley)
 
 <table>
   <tbody>
     <tr>
       <td align="center" valign="middle">
         <a href="https://patreon.com/tannerlinsley" target="_blank">
-          <img src="https://raw.githubusercontent.com/tannerlinsley/files/master/images/patreon/platinum.png">
+          <img width='200' src="https://raw.githubusercontent.com/tannerlinsley/files/master/images/patreon/platinum.png">
         </a>
       </td>
       <td align="center" valign="middle">
         <a href="https://tryretool.com/?utm_source=sponsor&utm_campaign=react_table" target="_blank">
-          <img src="https://raw.githubusercontent.com/tannerlinsley/files/master/images/patreon/sponsor-retool.png">
+          <img width='350' src="https://raw.githubusercontent.com/tannerlinsley/files/master/images/patreon/sponsor-retool.png">
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="http://bjntech.com/index.html?utm_campaign=react_table" target="_blank">
+          <img width='250' src="https://raw.githubusercontent.com/tannerlinsley/files/master/images/patreon/sponsor-bjn.png">
         </a>
       </td>
     </tr>
@@ -80,17 +102,17 @@ Looking for v6 information?
     <tr>
       <td align="center" valign="middle">
         <a href="https://patreon.com/tannerlinsley" target="_blank">
-          <img src="https://raw.githubusercontent.com/tannerlinsley/files/master/images/patreon/gold.png">
+          <img width='200' src="https://raw.githubusercontent.com/tannerlinsley/files/master/images/patreon/gold.png">
         </a>
       </td>
       <td align="center" valign="middle">
         <a href="https://nozzle.io" target="_blank">
-          <img width="300" src="https://nozzle.io/img/logo-blue.png">
+          <img width='230' src="https://nozzle.io/img/logo-blue.png">
         </a>
       </td>
       <td align="center" valign="middle">
-        <a href="https://zappi.com/web" target="_blank">
-          <img width="300" src="https://raw.githubusercontent.com/tannerlinsley/files/master/images/patreon/sponsor-zappi.png">
+        <a href="https://zappi.io/web/" target="_blank">
+          <img width='230' src="https://raw.githubusercontent.com/tannerlinsley/files/master/images/patreon/sponsor-zappi.png">
         </a>
       </td>
     </tr>
@@ -102,17 +124,7 @@ Looking for v6 information?
     <tr>
       <td align="center" valign="middle">
         <a href="https://patreon.com/tannerlinsley" target="_blank">
-          <img src="https://raw.githubusercontent.com/tannerlinsley/files/master/images/patreon/silver.png">
-        </a>
-      </td>
-      <td align="center" valign="middle">
-        <a href="https://patreon.com/tannerlinsley" target="_blank">
-          <img src="https://raw.githubusercontent.com/tannerlinsley/files/master/images/patreon/silver-placeholder.png">
-        </a>
-      </td>
-      <td align="center" valign="middle">
-        <a href="https://patreon.com/tannerlinsley" target="_blank">
-          <img src="https://raw.githubusercontent.com/tannerlinsley/files/master/images/patreon/silver-placeholder.png">
+          <img width='200' src="https://raw.githubusercontent.com/tannerlinsley/files/master/images/patreon/silver.png">
         </a>
       </td>
       <td align="center" valign="middle">
@@ -124,53 +136,45 @@ Looking for v6 information?
   </tbody>
 </table>
 
-## Table of Contents
+<table>
+  <tbody>
+    <tr>
+      <td valign="top">
+        <a href="https://patreon.com/tannerlinsley">
+          <img width='200' src="https://raw.githubusercontent.com/tannerlinsley/files/master/images/patreon/supporters.png" />
+        </a>
+      </td>
+      <td>
+        <div><a href="https://www.metso.com/">Pekka</a></div>
+        <div>Jon Eickmeier</div>
+        <div><a href="https://github.com/Shah-Sahab">Syed Hussain<a></div>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-- [Installation](#installation)
-- [Example](#examples)
-- [Contributing](#contributing)
+<table>
+  <tbody>
+    <tr>
+      <td valign="top">
+        <a href="https://patreon.com/tannerlinsley">
+          <img width='200' src="https://raw.githubusercontent.com/tannerlinsley/files/master/images/patreon/fans.png" />
+        </a>
+      </td>
+      <td>
+        <div>Sortmy.games</div>
+        <div>Hugo Meissner</div>
+        <div>Benoit Leger-Derville</div>
+        <div>Thomas Funk</div>
+        <div>Dan Houle</div>
+        <div>David Pickut</div>
+        <div>Jordan Soltman</div>
+        <div>Robert Tajnšek</div>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-## Installation
-
-1.  Install React Table as a dependency
-
-```bash
-# Yarn
-$ yarn add react-table
-
-# NPM
-$ npm install react-table
-```
-
-2.  Import the `react-table` module
-
-```javascript
-import { useReactTable } from 'react-table'
-```
-
-## Examples
-
-[React Table v7 Sandbox](https://codesandbox.io/s/m5lxzzpz69)
-
-# Documentation
-
-Documentation for v7 is coming soon. If you're looking for the [v6 documentation, click here](https://github.com/tannerlinsley/react-table/tree/v6)
-
-## Contributing
-
-To suggest a feature, create an issue if it does not already exist.
-If you would like to help develop a suggested feature follow these steps:
-
-- Fork this repo
-- Install dependencies with `$ yarn`
-- Auto-build files as you edit with `$ yarn run watch`
-- Implement your changes to files in the `src/` directory
-- Run the <a href="https://github.com/tannerlinsley/react-story">React Story</a> locally with `$ yarn run docs`
-- View changes as you edit `docs/src`
-- Submit PR for review
-
-#### Package Utilities
-
-- `$ yarn run watch` Watches files and builds via babel
-- `$ yarn run docs` Runs the storybook server
-- `$ yarn run test` Runs the test suite
+<a href="https://patreon.com/tannerlinsley">
+  <img width="150" alt="" src="https://raw.githubusercontent.com/tannerlinsley/files/master/images/patreon/become-a-patron.png" />
+</a>
